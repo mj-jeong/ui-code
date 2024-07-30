@@ -1,0 +1,125 @@
+// 브랜드홈
+.brd-home {
+  // TOP
+  &__top {
+    .brd__thumb {
+      position:relative; 
+      .origin {
+        display: inline-block;
+        background: rgba(0,0,0,.3);
+        position:absolute;
+        bottom: 6px;
+        right: 10px;
+        padding: 1px 4px 4px;
+        line-height: 1;
+
+        span {
+          color:rgba(255,255,255,.5);
+          font-size: 8px;
+          letter-spacing: -0.5px;
+          text-align: right;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .brd__thumb + .brd__info {
+      .brd__info--logo {
+        margin-top: -35px;
+      }
+      .zzim__tooltip {
+        top: 55px;
+        .tooltip-box {
+          @include posrt($top:-44px);
+          &:after {
+            @include posrb(10px, -12px);
+            @include rotate(90);
+          }
+        }
+      }
+    }
+    .brd__info {
+      position: relative;
+      padding: 0 $ctt-space;
+      // 브랜드 로고
+      &--logo {
+        @include size(70px);
+        border-radius: 100px;
+        overflow: hidden;
+        position: relative;
+        
+          &:after {
+            content: '';
+            @include position(absolute,0,0,0,0);
+            @include size(100%);
+            background: rgba(color(white,8),.15);
+            border-radius: 100%;
+            overflow:hidden;
+            z-index: 3;
+          }
+      }
+      // 브랜드명
+      &--brand {
+        @include size(80%, auto);
+        @include font(24px,28px);
+        display: block;
+        margin-top: 12px;
+        font-weight: bold;
+      }
+      // 브랜드 설명
+      &--txt {
+        @include size(80%, auto);
+        @include font(12px,20px);
+        margin-top:12px;
+        word-break: keep-all;
+     }
+     // 찜
+     .zzim__tooltip {
+        @include posrt(20px);
+     }
+    }
+  }
+
+  // NEW, BEST
+  &__wrap {
+    margin-top: 40px;
+    h2 {
+      @include font(18px,22px);
+      font-weight: bold;
+      padding: $ctt-space;
+    }
+  }
+
+  // LIST
+  &__list {
+    margin-top: 60px;
+    border-top: 1px solid color(white,3);
+
+    .tab__style0 {
+      position: relative;
+      margin-top: 10px;
+      padding: 20px 20px 10px 20px;
+
+      .swiper-wrapper{
+        li.swiper-slide {
+          padding-left: 16px;
+          &:first-child {
+            padding-left:0;
+          }
+          &.on {
+            + li.swiper-slide {
+              padding-left: 16px;
+
+            }
+          }
+
+        }
+      }
+    }
+
+
+    .tab__style5 {
+      padding: 10px 4px 10px;
+    }
+  }
+}
